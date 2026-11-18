@@ -1,0 +1,1779 @@
+O ChatGPT disse:
+Claro — vou juntar HTML + CSS no mesmo arquivo, para você só copiar e colar. Também mantive a estrutura baseada no seu código original e no visual da imagem de referência.
+
+Salve como doacao.html e coloque logoreal.png e cachorro-doacao.png na mesma pasta.
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pulso Verde - Doação</title>
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- GOOGLE FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+
+    <style>
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            font-family: 'Poppins', sans-serif;
+
+            background: #f7fbf5;
+
+            color: #193820;
+
+            min-height: 100vh;
+        }
+
+
+        /* =====================================================
+           NAVBAR
+        ===================================================== */
+
+        .navbar {
+
+            width: 100%;
+
+            height: 70px;
+
+            padding: 0 5%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            background: #ffffff;
+
+            border-bottom: 1px solid #edf1eb;
+
+        }
+
+
+        /* LOGO */
+
+        .nav-logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+        }
+
+
+        .nav-logo img {
+
+            width: 43px;
+
+            height: 43px;
+
+            object-fit: contain;
+
+        }
+
+
+        .logo-text h1 {
+
+            color: #27753a;
+
+            font-size: 15px;
+
+            font-weight: 700;
+
+            line-height: 1;
+
+        }
+
+
+        .logo-text p {
+
+            color: #647069;
+
+            font-size: 6px;
+
+            margin-top: 3px;
+
+        }
+
+
+        /* MENU */
+
+        .nav-links {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 27px;
+
+        }
+
+
+        .nav-links a {
+
+            position: relative;
+
+            text-decoration: none;
+
+            color: #354038;
+
+            font-size: 8px;
+
+            font-weight: 500;
+
+            transition: .3s;
+
+        }
+
+
+        .nav-links a:hover {
+
+            color: #27823e;
+
+        }
+
+
+        .nav-links a.active {
+
+            color: #27823e;
+
+        }
+
+
+        .nav-links a.active::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            right: 0;
+
+            bottom: -8px;
+
+            height: 2px;
+
+            border-radius: 10px;
+
+            background: #2d8c42;
+
+        }
+
+
+        /* USUÁRIO */
+
+        .nav-user {
+
+            width: 32px;
+
+            height: 32px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: #1e5f2d;
+
+            font-size: 17px;
+
+        }
+
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .donation-hero {
+
+            width: 92%;
+
+            max-width: 1150px;
+
+            min-height: 210px;
+
+            margin: 28px auto 22px;
+
+            padding: 28px 60px;
+
+            border-radius: 18px;
+
+            background:
+
+                linear-gradient(
+                    105deg,
+                    #edf8ea,
+                    #ffffff
+                );
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            overflow: hidden;
+
+            position: relative;
+
+        }
+
+
+        .donation-hero::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 250px;
+
+            height: 250px;
+
+            border-radius: 50%;
+
+            background: #e2f1dd;
+
+            right: 170px;
+
+            top: -140px;
+
+            opacity: .7;
+
+        }
+
+
+        /* TEXTO HERO */
+
+        .hero-text {
+
+            width: 50%;
+
+            position: relative;
+
+            z-index: 3;
+
+        }
+
+
+        .small-title {
+
+            color: #56935f;
+
+            font-size: 9px;
+
+            font-weight: 600;
+
+            letter-spacing: .8px;
+
+        }
+
+
+        .small-title i {
+
+            margin-right: 5px;
+
+        }
+
+
+        .hero-text h2 {
+
+            color: #216832;
+
+            font-size: 36px;
+
+            line-height: 1.1;
+
+            margin-top: 6px;
+
+            font-weight: 700;
+
+        }
+
+
+        .hero-text > p {
+
+            color: #304135;
+
+            font-size: 13px;
+
+            font-weight: 500;
+
+            margin-top: 8px;
+
+        }
+
+
+        .hero-description {
+
+            max-width: 380px;
+
+            color: #6d776f !important;
+
+            font-size: 9px !important;
+
+            line-height: 1.7;
+
+            font-weight: 400 !important;
+
+        }
+
+
+        /* IMAGEM */
+
+        .hero-image {
+
+            width: 43%;
+
+            height: 190px;
+
+            position: relative;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+        }
+
+
+        .image-circle {
+
+            width: 205px;
+
+            height: 205px;
+
+            border-radius: 50%;
+
+            background: #dcefd8;
+
+            position: absolute;
+
+            right: 65px;
+
+            top: -5px;
+
+        }
+
+
+        .hero-image img {
+
+            width: 260px;
+
+            height: 175px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            position: relative;
+
+            z-index: 2;
+
+            box-shadow: 0 10px 25px rgba(38, 91, 46, .13);
+
+        }
+
+
+        /* CORAÇÕES */
+
+        .heart {
+
+            position: absolute;
+
+            z-index: 5;
+
+            color: #6aad70;
+
+        }
+
+
+        .heart-1 {
+
+            right: 32px;
+
+            top: 32px;
+
+            font-size: 21px;
+
+        }
+
+
+        .heart-2 {
+
+            right: 10px;
+
+            bottom: 35px;
+
+            font-size: 13px;
+
+        }
+
+
+
+        /* =====================================================
+           SEÇÃO COMO DOAR
+        ===================================================== */
+
+        .how-donate {
+
+            width: 92%;
+
+            max-width: 1150px;
+
+            margin: 25px auto;
+
+        }
+
+
+        .section-title {
+
+            margin-bottom: 14px;
+
+        }
+
+
+        .section-title span {
+
+            color: #55935d;
+
+            font-size: 8px;
+
+            font-weight: 600;
+
+            letter-spacing: .8px;
+
+        }
+
+
+        .section-title h2 {
+
+            color: #254d2e;
+
+            font-size: 18px;
+
+            margin-top: 3px;
+
+        }
+
+
+        /* CARDS */
+
+        .donation-cards {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 13px;
+
+        }
+
+
+        .donation-card {
+
+            min-height: 150px;
+
+            background: #ffffff;
+
+            border: 1px solid #e6eee3;
+
+            border-radius: 11px;
+
+            padding: 17px;
+
+            position: relative;
+
+            transition: .3s;
+
+        }
+
+
+        .donation-card:hover {
+
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 10px 25px
+                rgba(44, 100, 50, .09);
+
+        }
+
+
+        .card-icon {
+
+            width: 37px;
+
+            height: 37px;
+
+            border-radius: 9px;
+
+            background: #e7f4e4;
+
+            color: #378447;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 15px;
+
+            margin-bottom: 9px;
+
+        }
+
+
+        .donation-card h3 {
+
+            color: #2a5131;
+
+            font-size: 11px;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .donation-card p {
+
+            color: #707c73;
+
+            font-size: 8px;
+
+            line-height: 1.6;
+
+            max-width: 190px;
+
+        }
+
+
+        .card-footer {
+
+            position: absolute;
+
+            right: 15px;
+
+            bottom: 13px;
+
+            color: #76ad7b;
+
+            font-size: 13px;
+
+        }
+
+
+
+        /* =====================================================
+           PIX + TRANSPARÊNCIA
+        ===================================================== */
+
+        .pix-section {
+
+            width: 92%;
+
+            max-width: 1150px;
+
+            margin: 28px auto;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 13px;
+
+        }
+
+
+        /* PIX */
+
+        .pix-content {
+
+            min-height: 130px;
+
+            background: #ffffff;
+
+            border: 1px solid #e4ede1;
+
+            border-radius: 12px;
+
+            padding: 19px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 13px;
+
+        }
+
+
+        .pix-icon {
+
+            width: 42px;
+
+            height: 42px;
+
+            flex-shrink: 0;
+
+            background: #e7f4e4;
+
+            color: #2d8141;
+
+            border-radius: 10px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 15px;
+
+        }
+
+
+        .pix-text {
+
+            flex: 1;
+
+        }
+
+
+        .pix-text span {
+
+            color: #579360;
+
+            font-size: 8px;
+
+            font-weight: 600;
+
+            letter-spacing: .7px;
+
+        }
+
+
+        .pix-text h3 {
+
+            color: #234e2c;
+
+            font-size: 11px;
+
+            margin: 4px 0;
+
+        }
+
+
+        .pix-text p {
+
+            color: #748078;
+
+            font-size: 7px;
+
+        }
+
+
+        .pix-copy button {
+
+            border: 0;
+
+            background: #edf7eb;
+
+            color: #337b40;
+
+            padding: 8px 10px;
+
+            border-radius: 7px;
+
+            font-family: inherit;
+
+            font-size: 7px;
+
+            cursor: pointer;
+
+            transition: .2s;
+
+        }
+
+
+        .pix-copy button:hover {
+
+            background: #dcefd9;
+
+        }
+
+
+        /* QR CODE */
+
+        .qr-code {
+
+            width: 68px;
+
+            height: 68px;
+
+            padding: 5px;
+
+            background: white;
+
+            border: 1px solid #dfe7dc;
+
+            border-radius: 5px;
+
+        }
+
+
+        .fake-qr {
+
+            width: 100%;
+
+            height: 100%;
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    #173e21 10%,
+                    transparent 10% 20%,
+                    #173e21 20% 30%,
+                    transparent 30% 40%,
+                    #173e21 40% 50%,
+                    transparent 50% 60%,
+                    #173e21 60% 70%,
+                    transparent 70% 80%,
+                    #173e21 80% 90%,
+                    transparent 90%
+                ),
+
+                linear-gradient(
+                    #173e21 10%,
+                    transparent 10% 20%,
+                    #173e21 20% 30%,
+                    transparent 30% 40%,
+                    #173e21 40% 50%,
+                    transparent 50% 60%,
+                    #173e21 60% 70%,
+                    transparent 70% 80%,
+                    #173e21 80% 90%,
+                    transparent 90%
+                );
+
+            opacity: .85;
+
+        }
+
+
+        /* TRANSPARÊNCIA */
+
+        .transparency {
+
+            background: #f0f8ed;
+
+            border: 1px solid #e0ecdc;
+
+            border-radius: 12px;
+
+            padding: 20px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+        }
+
+
+        .transparency-icon {
+
+            width: 43px;
+
+            height: 43px;
+
+            flex-shrink: 0;
+
+            background: #dcefd9;
+
+            color: #3b8b49;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 16px;
+
+        }
+
+
+        .transparency h3 {
+
+            color: #2b6936;
+
+            font-size: 11px;
+
+            margin-bottom: 4px;
+
+        }
+
+
+        .transparency p {
+
+            color: #69766d;
+
+            font-size: 7px;
+
+            line-height: 1.6;
+
+            max-width: 350px;
+
+        }
+
+
+
+        /* =====================================================
+           BARRA FINAL
+        ===================================================== */
+
+        .bottom-message {
+
+            width: 92%;
+
+            max-width: 1150px;
+
+            height: 38px;
+
+            margin: 25px auto;
+
+            background: #197431;
+
+            color: white;
+
+            border-radius: 7px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 9px;
+
+            font-size: 9px;
+
+            box-shadow:
+                0 5px 15px
+                rgba(25, 104, 43, .15);
+
+        }
+
+
+        .bottom-message i {
+
+            font-size: 11px;
+
+        }
+
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        .footer {
+
+            width: 92%;
+
+            max-width: 1150px;
+
+            margin: 25px auto 15px;
+
+            padding: 15px 0;
+
+            border-top: 1px solid #e4ebe1;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+        }
+
+
+        .footer-logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 7px;
+
+        }
+
+
+        .footer-logo img {
+
+            width: 31px;
+
+            height: 31px;
+
+            object-fit: contain;
+
+        }
+
+
+        .footer-logo strong {
+
+            color: #397747;
+
+            font-size: 9px;
+
+        }
+
+
+        .footer-logo p {
+
+            color: #78837b;
+
+            font-size: 6px;
+
+        }
+
+
+        .footer-links {
+
+            display: flex;
+
+            gap: 20px;
+
+        }
+
+
+        .footer-links a {
+
+            text-decoration: none;
+
+            color: #68736b;
+
+            font-size: 7px;
+
+            transition: .2s;
+
+        }
+
+
+        .footer-links a:hover {
+
+            color: #27803c;
+
+        }
+
+
+        .footer-social {
+
+            display: flex;
+
+            gap: 8px;
+
+        }
+
+
+        .footer-social a {
+
+            width: 25px;
+
+            height: 25px;
+
+            border-radius: 50%;
+
+            background: #edf5ea;
+
+            color: #3b7e46;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-decoration: none;
+
+            font-size: 10px;
+
+        }
+
+
+
+        /* =====================================================
+           RESPONSIVIDADE
+        ===================================================== */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+
+                gap: 15px;
+
+            }
+
+
+            .nav-links a {
+
+                font-size: 7px;
+
+            }
+
+
+            .donation-hero {
+
+                padding: 25px 35px;
+
+            }
+
+
+            .donation-cards {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+        }
+
+
+        @media (max-width: 700px) {
+
+            .navbar {
+
+                height: auto;
+
+                padding: 15px 5%;
+
+                flex-wrap: wrap;
+
+                gap: 12px;
+
+            }
+
+
+            .nav-links {
+
+                order: 3;
+
+                width: 100%;
+
+                justify-content: center;
+
+                overflow-x: auto;
+
+                padding-bottom: 4px;
+
+            }
+
+
+            .donation-hero {
+
+                flex-direction: column;
+
+                text-align: center;
+
+                padding: 30px 20px;
+
+            }
+
+
+            .hero-text {
+
+                width: 100%;
+
+            }
+
+
+            .hero-description {
+
+                margin: auto;
+
+            }
+
+
+            .hero-image {
+
+                width: 100%;
+
+                margin-top: 20px;
+
+            }
+
+
+            .pix-section {
+
+                grid-template-columns: 1fr;
+
+            }
+
+        }
+
+
+        @media (max-width: 500px) {
+
+            .donation-cards {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .hero-text h2 {
+
+                font-size: 30px;
+
+            }
+
+
+            .pix-content {
+
+                flex-wrap: wrap;
+
+            }
+
+
+            .footer {
+
+                flex-direction: column;
+
+                gap: 15px;
+
+            }
+
+
+            .footer-links {
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         HEADER
+    ===================================================== -->
+
+    <header class="navbar">
+
+
+        <div class="nav-logo">
+
+            <img src="logoreal.png"
+                 alt="Logo Pulso Verde">
+
+            <div class="logo-text">
+
+                <h1>
+                    PULSO VERDE
+                </h1>
+
+                <p>
+                    Proteção Animal e Tecnologia
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <nav class="nav-links">
+
+            <a href="#">
+                SOBRE NÓS
+            </a>
+
+            <a href="#">
+                ADOÇÃO
+            </a>
+
+            <a href="#" class="active">
+                DOAÇÃO
+            </a>
+
+            <a href="#">
+                DENÚNCIAS
+            </a>
+
+            <a href="#">
+                LEIS
+            </a>
+
+            <a href="#">
+                BLOG
+            </a>
+
+        </nav>
+
+
+        <div class="nav-user">
+
+            <i class="fa-solid fa-circle-user"></i>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         CONTEÚDO
+    ===================================================== -->
+
+    <main>
+
+
+        <!-- ================= HERO ================= -->
+
+        <section class="donation-hero">
+
+
+            <div class="hero-text">
+
+
+                <span class="small-title">
+
+                    <i class="fa-solid fa-paw"></i>
+
+                    FAÇA A DIFERENÇA
+
+                </span>
+
+
+                <h2>
+                    DOAÇÃO
+                </h2>
+
+
+                <p>
+                    Sua ajuda faz toda a diferença!
+                </p>
+
+
+                <p class="hero-description">
+
+                    Com sua doação, garantimos alimentação,
+                    cuidados médicos, abrigo e muito amor
+                    para animais que precisam.
+
+                </p>
+
+
+            </div>
+
+
+
+            <div class="hero-image">
+
+
+                <div class="image-circle"></div>
+
+
+                <img src="cachorro-doacao.png"
+                     alt="Cachorro">
+
+
+                <span class="heart heart-1">
+                    ♥
+                </span>
+
+
+                <span class="heart heart-2">
+                    ♥
+                </span>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================= COMO DOAR ================= -->
+
+        <section class="how-donate">
+
+
+            <div class="section-title">
+
+                <span>
+                    COMO DOAR?
+                </span>
+
+                <h2>
+                    Escolha uma forma de ajudar
+                </h2>
+
+            </div>
+
+
+
+            <div class="donation-cards">
+
+
+                <!-- CARD 1 -->
+
+                <div class="donation-card">
+
+                    <div class="card-icon">
+
+                        <i class="fa-solid fa-circle-dollar-to-slot"></i>
+
+                    </div>
+
+
+                    <h3>
+                        Doação Financeira
+                    </h3>
+
+
+                    <p>
+
+                        Qualquer valor ajuda a manter
+                        nossos projetos ativos.
+
+                    </p>
+
+
+                    <div class="card-footer">
+
+                        <i class="fa-solid fa-heart"></i>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CARD 2 -->
+
+                <div class="donation-card">
+
+                    <div class="card-icon">
+
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+
+                    </div>
+
+
+                    <h3>
+                        Doação de Ração
+                    </h3>
+
+
+                    <p>
+
+                        Doe ração para cães e gatos
+                        que precisam.
+
+                    </p>
+
+
+                    <div class="card-footer">
+
+                        <i class="fa-solid fa-bowl-food"></i>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CARD 3 -->
+
+                <div class="donation-card">
+
+                    <div class="card-icon">
+
+                        <i class="fa-solid fa-box-open"></i>
+
+                    </div>
+
+
+                    <h3>
+                        Materiais de Limpeza
+                    </h3>
+
+
+                    <p>
+
+                        Produtos de higiene são
+                        sempre bem-vindos.
+
+                    </p>
+
+
+                    <div class="card-footer">
+
+                        <i class="fa-solid fa-spray-can-sparkles"></i>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CARD 4 -->
+
+                <div class="donation-card">
+
+                    <div class="card-icon">
+
+                        <i class="fa-solid fa-pills"></i>
+
+                    </div>
+
+
+                    <h3>
+                        Medicamentos
+                    </h3>
+
+
+                    <p>
+
+                        Doe medicamentos e ajude
+                        nos cuidados dos animais.
+
+                    </p>
+
+
+                    <div class="card-footer">
+
+                        <i class="fa-solid fa-kit-medical"></i>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PIX E TRANSPARÊNCIA
+        ================================================== -->
+
+        <section class="pix-section">
+
+
+            <!-- PIX -->
+
+            <div class="pix-content">
+
+
+                <div class="pix-icon">
+
+                    <i class="fa-solid fa-link"></i>
+
+                </div>
+
+
+                <div class="pix-text">
+
+                    <span>
+                        CHAVE PIX
+                    </span>
+
+
+                    <h3 id="pixKey">
+                        doe@pulsoverde.org.br
+                    </h3>
+
+
+                    <p>
+                        Aponte a câmera do seu celular
+                        para o QR Code.
+                    </p>
+
+                </div>
+
+
+                <div class="pix-copy">
+
+                    <button onclick="copiarPix()">
+
+                        <i class="fa-regular fa-copy"></i>
+
+                        Copiar chave
+
+                    </button>
+
+                </div>
+
+
+                <!-- QR CODE -->
+
+                <div class="qr-code">
+
+                    <div class="fake-qr"></div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- TRANSPARÊNCIA -->
+
+            <div class="transparency">
+
+
+                <div class="transparency-icon">
+
+                    <i class="fa-solid fa-shield-heart"></i>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Transparência
+                    </h3>
+
+
+                    <p>
+
+                        Prestamos contas de todas as
+                        doações recebidas. Acompanhe
+                        nossos relatórios no nosso site
+                        e redes sociais.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             MENSAGEM FINAL
+        ================================================== -->
+
+        <section class="bottom-message">
+
+
+            <i class="fa-solid fa-paw"></i>
+
+
+            <span>
+                Juntos, transformamos vidas!
+            </span>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer class="footer">
+
+
+        <div class="footer-logo">
+
+
+            <img src="logoreal.png"
+                 alt="Pulso Verde">
+
+
+            <div>
+
+                <strong>
+                    PULSO VERDE
+                </strong>
+
+
+                <p>
+                    Proteção Animal e Tecnologia
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="footer-links">
+
+
+            <a href="#">
+                Sobre nós
+            </a>
+
+
+            <a href="#">
+                Adoção
+            </a>
+
+
+            <a href="#">
+                Doação
+            </a>
+
+
+            <a href="#">
+                Denúncias
+            </a>
+
+
+            <a href="#">
+                Leis
+            </a>
+
+
+            <a href="#">
+                Blog
+            </a>
+
+
+        </div>
+
+
+
+        <div class="footer-social">
+
+
+            <a href="#">
+
+                <i class="fa-brands fa-instagram"></i>
+
+            </a>
+
+
+            <a href="#">
+
+                <i class="fa-brands fa-facebook-f"></i>
+
+            </a>
+
+
+            <a href="#">
+
+                <i class="fa-solid fa-leaf"></i>
+
+            </a>
+
+
+        </div>
+
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ===================================================== -->
+
+    <script>
+
+
+        function copiarPix() {
+
+            const chave =
+                document.getElementById("pixKey").innerText;
+
+
+            navigator.clipboard.writeText(chave)
+                .then(function () {
+
+                    alert("Chave PIX copiada!");
+
+                })
+                .catch(function () {
+
+                    alert("Não foi possível copiar a chave.");
+
+                });
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
+
+Para funcionar
+Coloque os arquivos assim:
+
+seu-projeto/
+│
+├── doacao.html
+├── logoreal.png
+└── cachorro-doacao.png
+
+Se você não tiver cachorro-doacao.png, pode temporariamente trocar:
+
+<img src="cachorro-doacao.png"
+     alt="Cachorro">
+
+por uma imagem que você já tenha, por exemplo:
+
+<img src="animales.png"
+     alt="Animais">
