@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre mim</title>
+    <style>
+        /* A animação de texto simples de Nooray Yemon cria um efeito de inversão vertical de texto dentro do #flipcontêiner, 
+        fazendo com que diferentes palavras — trabalho, estilo de vida e tudo mais — apareçam em um loop sequencial e infinito. 
+        A animação é controlada pelo @keyframes show, que ajusta a posição margin-top dos dos filhos,fazendo com que eles deslizem
+         para a visualização. */
+        body {
+            margin: 0px;                      /* Remove a margem padrão da página */
+            font-family: 'Roboto';            /* Define a fonte Roboto para o texto */
+            text-align: center;               /* Centraliza o conteúdo horizontalmente */
+          }isadora
+          
+          #container {
+            color: #999;                   /* Define cor cinza claro para o texto */
+            text-transform: uppercase;       /* Transforma o texto em letras maiúsculas */
+            font-size: 36px;                 /* Define o tamanho da fonte */
+            font-weight: bold;               /* Texto em negrito */
+            padding-top: 200px;              /* Espaçamento interno no topo */
+            position: fixed;                 /* Fixa o elemento na tela */
+            width: 100%;                     /* Largura total da tela */
+            bottom: 45%;                     /* Posiciona a 45% da parte inferior da janela */
+            display: block;                  /* Exibe como bloco (padrão de divs) */
+          }
+          
+          #flip {
+            height: 50px;                    /* Altura visível do contêiner de animação */
+            overflow: hidden;               /* Esconde o conteúdo que ultrapassa essa altura */
+          }
+          
+          #flip > div > div { 
+            color: #fff;                     /* Texto branco */
+            padding: 4px 12px;               /* Espaçamento interno (vertical e horizontal) */
+            height: 45px;                    /* Altura de cada item */
+            margin-bottom: 45px;            /* Espaço entre os itens para animação */
+            display: inline-block;          /* Exibe como bloco em linha */
+          }
+          
+          #flip div:first-child { /*Seleciona um elemento pai dentro de um
+            elemento filho dentro de uma div */
+            animation: show 5s linear infinite; /* Aplica a animação chamada "show" continuamente a cada 5 segundos */
+          }
+          
+          #flip div div {
+            background: #42c58a;            /* Cor de fundo padrão (verde) para os itens */
+          }
+          
+          #flip div:first-child div {
+            background: #4ec7f3;            /* Cor de fundo azul para o primeiro item */
+          }
+          
+          #flip div:last-child div { 
+            background: #DC143C;            /* Cor de fundo vermelha para o último item */
+          }
+          
+          @keyframes show { 
+            0%      { margin-top: -270px; } /* Começa fora da área visível (3 itens * 90px) */
+            5%      { margin-top: -180px; } /* Mostra o primeiro item */
+            33%     { margin-top: -180px; } /* Mantém o primeiro item visível */
+            38%     { margin-top: -90px; }  /* Mostra o segundo item */
+            66%     { margin-top: -90px; }  /* Mantém o segundo item visível */
+            71%     { margin-top: 0px; }    /* Mostra o terceiro item */
+            99.99%  { margin-top: 0px; }    /* Mantém o terceiro item visível até o fim */
+           /* Reinicia a animação do início */
+          }
+          
+
+    </style>
+      <div id=container> <!-- Especificando para
+        aplicar estiloda Div Container no texto abaixo.-->
+        PARA DE PREGUIÇA
+        <div id=flip> <!-- Especificando para
+          aplicar estiloda Div flip no texto abaixo.-->
+          <div><div>VAI</div></div>
+          <div><div>ESTUDAR</div></div>
+          <div><div>!!!</div></div>
+   
+      </div>
+      
+  

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<title>Animação de cor de fundo</title>
+<style>
+    /*Estilo geral da página*/
+    body{
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: fundocolorido 5s infinite alternate;
+        /* Aplica a animação chamada "fundoColorido"
+        Duração: 5 segundos
+        Infinite: repete pra sempre
+        alternate: vai e volta entre as cores */
+    }
+    /* animação que muda a cor de fundo */
+    /* porcentagens no @keyframes define em que ponto da animação certos estilos devem ser aplicados.*/
+    @keyframes fundocolorido{
+        0% {background-color: aqua;} /* Azul no inicio */
+        50% {background-color:purple;} /*Roxo no meio */
+        75% {background-color: pink;} /*Rosa no meio */
+        100% {background-color: red;} /* Vermelho no final */
+    }
+
+    /* Caixa apenas como referência visual */
+    .caixa{
+        width: 250px;
+        height: 250px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 10px black;
+
+    }
+</style>
+</head>
+<body>
+
+    <div class="caixa"></div>
+    <div class="caixa"></div>
+</body>
+</html>
+

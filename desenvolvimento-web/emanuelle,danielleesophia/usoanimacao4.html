@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo com Borda e Menu</title>
+
+    <style>
+        /* Define o estilo geral da página */
+        body {
+            font-family: Arial, sans-serif; /* Fonte da página */
+            background-color: #f5f5f5;       /* Cor de fundo da página */
+            margin: 0;                       /* Remove margem padrão */
+            padding: 0;
+        }
+
+        /* Estiliza o contêiner principal com bordas */
+        .container {
+            max-width: 800px;               /* Largura máxima */
+            margin: 50px auto;              /* Centraliza na tela */
+            background-color: white;        /* Cor de fundo do contêiner */
+            border: 2px solid #333;         /* Borda sólida escura */
+            padding: 20px;                  /* Espaçamento interno */
+            box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Sombra leve */
+        }
+
+        /* Estilo do menu de navegação */
+        .menu {
+            background-color: #333;         /* Fundo escuro do menu */
+            padding: 10px 0;                /* Espaçamento interno */
+        }
+
+        .menu a {
+            color: white;                   /* Cor do texto dos links */
+            text-decoration: none;          /* Remove sublinhado */
+            padding: 10px 20px;             /* Espaçamento dos links */
+            display: inline-block;          /* Alinha os itens lado a lado */
+        }
+
+        .menu a:hover {
+            background-color: #555;         /* Cor ao passar o mouse */
+        }
+
+        /* Conteúdo principal da página */
+        .conteudo {
+            margin-top: 20px;               /* Espaço acima do conteúdo */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Início do contêiner principal -->
+    <div class="container">
+
+        <!-- Menu de navegação -->
+        <div class="menu">
+            <a href="#">Início</a>
+            <a href="#">Sobre</a>
+            <a href="#">Serviços</a>
+            <a href="#">Contato</a>
+        </div>
+
+        <!-- Conteúdo principal -->
+        <div class="conteudo">
+            <h1>Bem-vindo ao nosso site!</h1>
+            <p>Esta é uma página de exemplo com bordas e um menu de navegação.</p>
+        </div>
+
+    </div>
+
+</body>
+</html>

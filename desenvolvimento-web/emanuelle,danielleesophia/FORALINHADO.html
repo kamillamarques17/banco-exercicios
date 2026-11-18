@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>Orçamento</title>
+<style>
+/* Estilo geral do corpo da página */ 
+body{
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+margin: 0;
+padding: 0;
+background-color: #f2f2f2;
+}
+/* Menu superior */
+.menu {
+background-color: #483d8b; /*Azul escuro*/
+padding: 5px;
+text-align: center;
+}
+.menu-img {
+    text-align: left; /* para o logo ficar para a esquerda*/
+    margin-right: 15px; /* espaço entre a imagem e o menu*/
+    margin-top: 12px; /* espaço em cima da imagem*/
+    margin-bottom: -25px; /* espaço abaixo da imagem*/
+    margin-left: 20px;
+}
+.menu a {
+color: #ffffff;
+text-decoration: none;
+margin: 0 15px; 
+font-weight: bold; 
+font-size: 19px;
+transition: background-color 0.3s;
+padding: 10px 15px; 
+border-radius: 5px;
+font-family: 'Oswald';
+}
+.menu a: hover { 
+background-color: #0055aa; /* Azul mais claro ao passar o mouse */
+}
+.menu-botao{
+    display: inline-block;
+    padding: 20px 50px;
+    background-color: #483d8b;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    font-size: 19px;
+    align-items: center;
+    font-family: 'Oswald';
+}
+.menu-botao:hover{
+        background-color: #5A4F9C;
+    }
+/* Container principal com borda */
+.container {
+max-width: 1200px; /* Alterar o tamanho do quadrado branco (container)*/ 
+margin: 30px auto; /* Alterar o espaço entre o container e o inicio da página */ 
+background-color: #E6E6FA;
+border: 2px solid #ccc;
+border-radius: 10px;
+padding: 30px;
+box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+/* Conteúdo da página */
+.conteudo h1{
+color: #483d8b;
+font-family: 'Oswald';
+font-size: 45px;
+}
+.conteudo h2{
+   color: #5A4F9C; 
+   font-family: 'Oswald';
+   font-size: 20px;
+   text-align: justify;
+}
+.conteudo p {
+font-size: 18px;
+color: #5A4F9C;
+text-align: justify;
+font-family: 'Oswald';
+line-height: 1.6;
+}
+.quadrado {
+    width: 400px;  /* Largura */
+    height: 100px; /* Altura */
+    padding: 10px;
+    font-size: 15px;
+    resize: none; /* Impede o usuário de redimensionar o campo */
+}
+.tabela{
+    align-items: center;
+text-align: center;
+max-width: 650px;
+}
+/* Rodapé */
+.rodape {
+background-color: #e0e0e0; /*Cinza claro*/
+color: #333;
+text-align: center;
+padding: 20px;
+margin-top: 40px; 
+font-size: 14px;
+}
+/* Serve para aplicar estilo CSS para criar layouts que se adaptam*/
+@media (max-width: 600px) { /* Altera a largura do menu azul da parte de cima */
+.menu a { /*Seleciona todos os links <a> dentro de um elemento com o classe "menu"*/
+display: block; /*Faz o link se comportar como um bloco, ocupando toda a largura disponível*/
+margin: 10px; /*Adiciona 10px de margem em todos os lados do link*/
+}
+.container{ /*Seleciona qualquer elemento com a classe "container"*/
+    margin: 15px; /*Adiciona 15px de margem externa (afasta o container de outros elementos)*/
+    padding: 20px; /*Adiciona 20px de preenchimento interno (espaço entre o conteúdo e a borda)*/
+}
+}
+</style>
+
+</head>
+<body>
+    <!--Menu de navegaçõa (topo)-->
+    <div class="menu">
+        <div class="menu-img">
+            <img src="logo.png" alt="menu-img" height="80" wight="80">
+        </div>
+        <a href="Projeto-inicio.html"_blank" class="menu-botao">Início</a> <!-- # vai ser o nome do arquivo que voce ira clicar e abrir-->
+        <a href="Projeto-servicos.html"_blank" class="menu-botao">Serviços</a>
+        <a href="Projeto-sobre.html"_blank" class="menu-botao">Sobre Nós</a>
+        <a href="Projeto-orcamento.html"_blank" class="menu-botao">Orçamento</a>
+        <a href="Projeto-blog.html"_blank" class="menu-botao">Blog</a>
+        <a href="Projeto-contato.html"_blank" class="menu-botao">Contato</a>
+    </div>
+    <div class="container">
+        <div class="conteudo">
+            <h1>Solicite seu orçamento gratuito</h1>
+            <h2>Preencha o formulário abaixo e nos conte sobre o seu problema. Retornaremos o mais rápido possível com um orçamento claro, sem surpresas e sem compromisso</h2>
+            <div class="tabela">
+             <p>Nome: <input type="text" size="50" maxlength="256" name="Nome" placeholder="Seu nome"></p>
+            <p>Email: <input type="text" size="50" maxlength="256" name="Email" placeholder="seu.email@exemplo.com"></p>
+            <p>Telefone: &nbsp;<input typw="text" size="47" maxlength="256" name="Email" placeholder="(99) 99999-9999"></p>
+            <p>Tipo de equipamento: 
+                <select name="secao" size="1" >
+                    <option value="MNotbook">&nbsp;&nbsp;&nbsp;Notbook</option>
+                    <option value="Computador/PC">&nbsp;&nbsp;&nbsp;Computador/PC</option>
+                    <option value="Servidor">&nbsp;&nbsp;&nbsp;Servidor</option>
+                    <option value="Rede">&nbsp;&nbsp;&nbsp;Rede</option>
+                </select></p>
+                <p>Descreva seu problema: <textarea class="quadrado" name="descricao" placeholder="Descreva seu problema de forma detalhada para que possamos te ajudar da melhor forma possível"></textarea></p>
+            </div>
+            </div>
+            </div>
+    
+    <div class="rodape">
+        &copy; 2025 - Todos os direitos reservados | Desenvolvido por Isadora Rochinski
+    </div>
+</body>
+</html>

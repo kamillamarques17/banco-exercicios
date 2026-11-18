@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos - aling content</title>
+    <!--A tag style é usada para aplicar estilo CSS a 
+    um elemento HTML-->
+    <style> 
+        .container{ /* Define uma área */
+            height: 400px; /* Define a altura do container 
+            como 400 pixels */
+            max-width: 300px; /* Define a largura como 400 pixels */
+            /*margin: 0 auto;*/
+            display: flex; /* permite que os elementos sejam flexiveis */
+            flex-wrap: wrap;/* Esta propriedade controla como os itens flexíveis se comportam
+             quando não há espaço suficiente na linha. Com wrap, os itens que não couberem na linha 
+             serão movidos para a próxima linha, criando múltiplas linhas, se necessário. */
+            border: 1px solid white; /* Adiciona uma borda sólida branca ao contêiner, apenas para fins visuais, facilitando a visualização do contêiner na tela.  */
+        }
+        .item{ /* Tag para aplicar estilo */
+            background-color: rgb(41, 41, 245); /* Tag para colocar cor no 
+            fundo do container */
+            padding: 0 5px; /* separar a escrita da borda */
+            margin: 5px; /* */
+            flex: 1;
+            text-align: center;color: white; /* Centraliza o texto e coloca
+            na cor branca*/
+        }
+        .center{ /* centralizar  */
+            align-content: center;  
+            /* align-content especifica as linhas flexiveis */
+        }
+        .stretch{
+            /* Estica o espaço disponível entre as
+             linhas do contêiner flexível para preencher o espaço disponível.  */
+            align-content: stretch; 
+        }
+        .start{
+            /* Alinha as linhas do conteúdo no início do
+            eixo transversal (lado de cima, por padrão).   */
+            align-content: flex-start;
+        }
+        .end{
+             /* Alinha as linhas no final do eixo transversal 
+             (lado de baixo, por padrão) */
+            align-content: flex-end;
+        }
+        .between{
+            /* Distribui as linhas com espaços iguais entre elas, 
+            sem espaço nas extremidades do contêiner. */
+            align-content: space-between;
+        }
+        .around{
+            /* Distribui as linhas com espaços iguais ao redor de cada
+             linha (há meio espaço nas extremidades em relação às bordas).. */
+            align-content: space-around;
+        }
+    </style>
+</head>
+<body>
+    <h1></h1>
+    <div class="container"> 
+        <div class="item">Lorem ipsum dolor,</div>
+        <div class="item">sit amet consectetur adipisicing elit.</div>
+        <div class="item">Impedit dolorum perspiciatis voluptas dolore iste nulla quibusdam ipsa,</div>
+        <div class="item">officiis suscipit incidunt? Quibusdam,</div>
+        <div class="item"> maxime tenetur voluptas perspiciatis excepturi nemo accusamus!</div>
+        <div class="item">Quasi,</div>
+        <div class="item">reiciendis.</div>
+    </div>
+    <p>center</p>
+    <!-- serve para alterar o estilo em partes específicas 
+    da página e posicionar objetos.-->
+    <!--É um atributo que pode ser aplicado a qualquer elemento HTML, 
+    incluindo <div>, permitindo a aplicação de estilos CSS ou funcionalidades JavaScript específicas. -->
+    <div class="container center">
+        <div class="item">Lorem ipsum dolor,</div>
+        <div class="item">sit amet consectetur adipisicing elit.</div>
+        <div class="item">Impedit dolorum perspiciatis voluptas dolore iste nulla quibusdam ipsa,</div>
+        <div class="item">officiis suscipit incidunt? Quibusdam,</div>
+        <div class="item"> maxime tenetur voluptas perspiciatis excepturi nemo accusamus!</div>
+        <div class="item">Quasi,</div>
+        <div class="item">reiciendis.</div>
+    </div>
+    <p>stretch</p>
+    <div class="container stretch">
+        <div class="item">Lorem ipsum dolor</div>
+        <div class="item">Lorem ipsum dolor.</div>
+        <div class="item">Lorem ipsum dolor</div>
+        <div class="item">Lorem ipsum dolor</div>
+        <div class="item"> Lorem ipsum dolor</div>
+        <div class="item">Quasi,</div>
+        <div class="item">reiciendis.</div>
+    </div>
+    <p>flex-start</p>
+    <div class="container start">
+        <div class="item">Lorem ipsum dolor,</div>
+        <div class="item">sit amet consectetur adipisicing elit.</div>
+        <div class="item">Impedit dolorum perspiciatis voluptas dolore iste nulla quibusdam ipsa,</div>
+        <div class="item">officiis suscipit incidunt? Quibusdam,</div>
+        <div class="item"> maxime tenetur voluptas perspiciatis excepturi nemo accusamus!</div>
+        <div class="item">Quasi,</div>
+        <div class="item">reiciendis.</div>
+    </div>
+    <p>flex-end</p>
+    <div class="container end">
+        <div class="item">Lorem ipsum dolor,</div>
+        <div class="item">sit amet consectetur adipisicing elit.</div>
+        <div class="item">Impedit dolorum perspiciatis voluptas dolore iste nulla quibusdam ipsa,</div>
+        <div class="item">officiis suscipit incidunt? Quibusdam,</div>
+        <div class="item"> maxime tenetur voluptas perspiciatis excepturi nemo accusamus!</div>
+        <div class="item">Quasi,</div>
+        <div class="item">reiciendis.</div>
+    </div>
+    <p>space-between</p>
+    <div class="container between ">
+        <div class="item">Lorem ipsum dolor,</div>
+        <div class="item">sit amet consectetur adipisicing elit.</div>
+        <div class="item">Impedit dolorum perspiciatis voluptas dolore iste nulla quibusdam ipsa,</div>
+        <div class="item">officiis suscipit incidunt? Quibusdam,</div>
+        <div class="item"> maxime tenetur voluptas perspiciatis excepturi nemo accusamus!</div>
+        <div class="item">Quasi,</div>
+        <div class="item">reiciendis.</div>
+    </div>
+    <p>space-around</p>
+    <div class="container around">
+        <div class="item">Lorem ipsum dolor,</div>
+        <div class="item">sit amet consectetur adipisicing elit.</div>
+        <div class="item">Impedit dolorum perspiciatis voluptas dolore iste nulla quibusdam ipsa,</div>
+        <div class="item">officiis suscipit incidunt? Quibusdam,</div>
+        <div class="item"> maxime tenetur voluptas perspiciatis excepturi nemo accusamus!</div>
+        <div class="item">Quasi,</div>
+        <div class="item">reiciendis.</div>
+    </div>
+</body>
+</html>

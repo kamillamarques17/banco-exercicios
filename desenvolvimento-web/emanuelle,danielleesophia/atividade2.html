@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos - flex direction</title>
+    <style>
+        div li{
+            list-style: none;
+        }
+        .flex-container{
+            margin: 20px;
+            padding: 0;
+            display: flex;
+            list-style: none;
+        }
+        .flex-item{
+            background: rgb(247, 32, 32);
+            height: 200px;
+            width: 200px;
+            line-height: 100px;
+            text-align: left;
+            margin: 5px;
+        }
+        .row{
+            flex-direction: row;
+        }
+        .row-reverse{
+            flex-direction: row-reverse;
+        }
+        .row-reverse li{
+            background-color: crimson;
+        }
+        .colunm{
+            float: left;
+            flex-direction: column;
+        }
+        .colunm li{
+            background-color: goldenrod;
+            color: black;
+        }
+        .colunm-reverse{
+            float: right;
+            flex-direction: column-reverse;
+        }
+        .colunm-reverse li{
+            background-color: chartreuse;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <ul class="flex-container row"> <!--organizados da esquerda para a direita -->
+        <li class="flex-item">1</li> 
+       
+    </ul>
+    <ul class="flex-container row-reverse"> <!-- organizado da direita para
+        a esquerda-->
+        <li class="flex-item">2</li>
+        
+    </ul>
+    <ul class="flex-container colunm"> <!-- organizado de baixo para cima-->
+        <li class="flex-item">3</li>
+      
+    </ul>
+    <ul class="flex-container colunm-reverse"> <!--organizado em ordem reversa do item
+        de cima-->
+        <li class="flex-item">4</li>
+      
+    </ul>
+    </div>
+</body>
+</html>

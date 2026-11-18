@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <style>
+    .calculadora {
+        width: 400px;
+        margin: 40px auto;
+        border: 1px solid #000000;
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.3); /* adiciona um efeito
+        de sombra */
+    }
+    
+    .display {
+        width: 90%;
+        margin: 10px;
+        height: 50px;
+        text-align: right;
+        font-size: 24px;
+        padding: 5px;
+    }
+    
+    .botoes {
+        display: black;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 5px;
+        padding: 8px;
+    }
+    
+    .button {
+        padding: 15px;
+        font-size: 18px;
+        border: none;
+        cursor: pointer;
+        border-radius: 3px;
+    }
+    
+    .button:hover {
+        background-color: #f1f1f1;
+    }
+</style>
+    <div class="calculadora">
+        <input type="text" class="display" readonly>
+        <div class="botoes">
+            <button class="button">C</button>
+            <button class="button">/</button>
+            <button class="button">*</button>
+            <button class="button">-</button>
+            <button class="button">7</button>
+            <button class="button">8</button>
+            <button class="button">9</button>
+            <button class="button">+</button>
+            <button class="button">4</button>
+            <button class="button">5</button>
+            <button class="button">6</button>
+            <button class="button">1</button>
+            <button class="button">2</button>
+            <button class="button">3</button>
+            <button class="button">0</button>
+            <button class="button">.</button>
+            <button class="button">=</button>
+        </div>
+    </div>
+</body>
+</html>

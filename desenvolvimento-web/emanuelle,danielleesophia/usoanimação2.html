@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animação CSS</title>
+    <style>
+    @keyframes slidein {
+        from { /* ou 0% */
+          margin-left: 0;
+        }
+        to { /* ou 100% */
+          margin-left: 100px;
+        }
+      }
+    .meu-elemento {
+        animation-name: slidein;       /* Nome da animação criada */
+        animation-duration: 3s;        /* Duração da animação */
+        animation-iteration-count: 3;  /* Quantas vezes a animação deve repetir */
+        animation-direction: alternate; /* Alterna a direção a cada repetição */
+      }
+      .meu-elemento {
+        animation-name: slidein;       /* Nome da animação criada */
+        animation-duration: 3s;        /* Duração da animação */
+        animation-iteration-count: 3;  /* Quantas vezes a animação deve repetir */
+        animation-direction: alternate; /* Alterna a direção a cada repetição */
+      }
+      .meu-botao {
+        background-color: blue;
+        transition: background-color 0.3s ease; /* Anima a mudança do background */
+      }
+  
+      .meu-botao:hover {
+        background-color: red; /* Mudar para vermelho quando o rato está sobre ele */
+      }
+    </style>
+    <button class="meu-botao">Botão Animado</button>
+    </html>
+    

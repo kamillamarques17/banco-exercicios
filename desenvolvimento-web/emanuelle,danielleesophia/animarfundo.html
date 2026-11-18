@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Animação de Cor de Fundo</title>
+<style>
+  body {
+    animation-name: changeBackgroundColor;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+    background-color: red; /* Cor inicial */
+    min-height: 100vh; /* Para ocupar a tela inteira */
+  }
+
+  @keyframes changeBackgroundColor {
+    0% { background-color: red; }
+    50% { background-color: blue; }
+    100% { background-color: red; }
+  }
+</style>
+</head>
+<body>
+  <h1>Este é o conteúdo do corpo da página</h1>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Interativa</title>
+
+    <style>
+        /* Estilo geral do corpo da página */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        /* Menu superior */
+        .menu {
+    
+           
+            background-color: #003366; /* Azul escuro */
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        .menu a {
+            width: 200px;
+            padding: 20px;
+            color: #ffffff;
+            text-decoration: none;
+            margin: 15px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: background-color 0.3s; /* faz a cor de fundo (background-color)
+             de
+            um elemento mudar suavemente ao longo de 0.3 segundos, 
+            desacelerando o movimento no final, em vez de mudar instantaneamente.*/
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .menu a:hover {
+            background-color: #0055aa; /* Azul mais claro ao passar o mouse */
+        }
+
+        /* Container principal com borda */
+        .container {
+            max-width: 900px; /*  Alterar o tamanho do quadrado branco
+             (container)*/
+            margin: 30px auto; /* Alterar o espaço entre o
+             container
+            e o inicio da página */
+            background-color: #ffffff;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Conteúdo da página */
+        .conteudo h1 {
+            color: #003366;
+        }
+
+        .conteudo p {
+            font-size: 18px;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        /* Rodapé */
+        .rodape {
+            background-color: #e0e0e0; /* Cinza claro */
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+
+        /* Serve para aplica estilo CSS para criar layouts 
+        que se adaptam */
+        @media (max-width: 600px) { /* Altera a largura do menu azul da parte de 
+            cima */
+            .menu a {                  /* Seleciona todos os links <a> dentro de um elemento com a 
+                classe 
+                "menu" */
+                display: block;        /* Faz o link se comportar como um bloco, ocupando toda 
+             a largura disponível */
+                margin: 10px;          /* Adiciona 10px de margem em todos os lados do link */
+            }
+            
+            .container {              /* Seleciona qualquer elemento com a classe "container" */
+                margin: 15px;         /* Adiciona 15px de margem externa (afasta o container de
+                 outros
+                 elementos) */
+                padding: 20px;        /* Adiciona 20px de preenchimento interno (espaço entre o 
+                conteúdo e a borda) */
+            }
+            
+            }
+        
+    </style>
+</head>
+<body>
+    <img src="matrix.jpg" alt="image" height="800" wight="500">
+    <!-- Menu de navegação (topo) -->
+    <div class="menu">
+        <a href="#">Início</a>  <!-- A # vai ser o nome do arquivo 
+        que voce ira clicar e abrir-->
+        <a href="#">Serviços</a>
+        <a href="#">Sobre</a>
+        <a href="#">Contato</a>
+    </div>
+
+    <!-- Conteúdo central com bordas -->
+    <div class="container">
+        <div class="conteudo">
+            <h1>Bem-vindo ao nosso site!</h1>
+            <p>Esta página demonstra o uso de HTML e CSS com bordas, menus.</p>
+            <p>Você pode adaptar o código conforme sua necessidade</p>
+        </div>
+    </div>
+
+    <!-- Rodapé (aba inferior) -->
+    <div class="rodape">
+        &copy; 2025 - Todos os direitos reservados | Desenvolvido por Você
+    </div>
+
+</body>
+</html>

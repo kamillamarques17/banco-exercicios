@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <style>
+       body{
+        background-color: rgb(0, 0, 0);
+       }
+    .calculadora {
+        background-color: rgb(255, 252, 216);
+        width: 300px;
+        margin: 80px auto;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.3); /* adiciona um efeito
+        de sombra */
+        height: 450px; /* Altura fixa */
+   
+    .display {
+      
+        width: 90%;
+        margin: 10px;
+        height: 50px;
+        text-align: right;
+        font-size: 24px;
+        padding: 5px;
+    }
+    
+    .botoes {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 5px;
+        padding: 8px;
+    }
+    
+    .button {
+
+        margin: 03px;
+        padding: 15px;
+        font-size: 18px;
+        border: none;
+        cursor: pointer;
+        border-radius: 3px;
+    }
+    
+    .button:hover {
+        background-color: #fffbff;
+    }
+    .c{
+        margin: 03px;
+        padding: 10px;
+        font-size: 18px;
+        border: none; /* remover as bordas ao redor do botao*/ 
+        cursor: pointer;  /*Mostra uma mão indicando que o botão é clicável */
+        border-radius: 3px; /* arredondar o botao*/
+       background-color: rgba(116, 85, 46, 0.897);
+
+    }
+   .botaoigual{
+    margin: 05px;
+        padding: 15px;
+        font-size: 18px;
+        border: none;
+        cursor: pointer;
+        border-radius: 3px;
+       background-color: rgba(116, 85, 46, 0.897);
+grid-row: span 2;  /* O botão ocupa 2 linhas */
+height: 120px; /* Defina a altura desejada */
+   }
+   .botaozero{
+    grid-column: span 2;  /*  Ocupa duas colunas */
+    width: 150px;
+    height: 50px;
+    margin: 05px;
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+   }
+
+</style>
+    <div class="calculadora">
+        <input type="text" class="display" readonly>
+        <div class="botoes">
+            <button class="c">C</button>
+            <button class="c">Ce</button>
+            <button class="c">*</button>
+            <button class="c">x</button>
+            <button class="button">7</button>
+            <button class="button">8</button>
+            <button class="button">9</button>
+            <button class="c">-</button>
+            <button class="button">4</button>
+            <button class="button">5</button>
+            <button class="button">6</button>
+            <button class="c">+</button>
+            <button class="button">1</button>
+            <button class="button">2</button>
+            <button class="button">3</button>
+            <button class="botaoigual">=</button>
+            <button  class="botaozero">0</button>
+            <button class="button">.</button>
+           
+           
+        </div>
+    </div>
+</body>

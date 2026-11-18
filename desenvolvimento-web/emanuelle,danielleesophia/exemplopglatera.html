@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página com Menu e Containers</title>
+    <style>
+        /* 
+A barra lateral (sidebar) é geralmente implementada com a tag <aside> ou <div>, contendo uma lista não ordenada (<ul>) com os itens de navegação,
+cada um representado por uma tag de item de lista (<li>), e um link (<a>) dentro de cada <li> para a navegação. Esta estrutura, combinada com CSS para estilização,
+cria uma seção de conteúdo adicional ou menu na página. */
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Layout da página */
+        body {
+            display: flex;
+            min-height: 100vh;
+            background-color: #f0f0f0; /* fundo cinza claro */
+        }
+
+        /* Menu lateral */
+        .sidebar {
+            width: 200px;
+            background-color: #1e3a5f; /* azul escuro */
+            color: white;
+            padding: 20px;
+        }
+
+        .sidebar h2 {
+            margin-bottom: 20px;
+            font-size: 20px;
+            text-align: center;
+        }
+ .texto{
+    color: white
+ }
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar ul li {
+            margin: 150px 0;
+        }
+
+        .sidebar ul li a { /*  formatação parte escrita*/
+            color: rgb(255, 255, 255); /*  alterar o jeito do botao ao clicar*/
+            text-decoration: none;
+            font-size: 20px; /*  alterar o tamanho do menu */
+            display: block;
+            padding: 0.5px;  /*  alterar o espaçamento entre as palavras */
+            transition: background 0.3s;
+        }
+
+        .sidebar ul li a:hover {
+            background-color: #fcf9c3;
+        }
+
+        /* Área principal do container*/
+        .main {
+            flex: 5;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 10px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Containers */
+        .container {
+     
+            width: 45%;
+            min-height: 150px;
+            background-color: #756c6cfe; 
+            border-radius: 20px;  /* arredondar a lateral do container  */ 
+            box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+            display: flex; /* Alinhar as informações centralizadas dentro
+            do container */
+            align-items: center; /* Alinhar as informações centralizadas dentro
+            do container */
+            justify-content: center; /* Alinhar as informações centralizadas dentro
+            do container */
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* Responsivo: se adapta a qualquer tipo de tela */ 
+        @media (max-width: 768px) { 
+            .container {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <img src="logo.jpg" alt="image" height="500" wight="500">
+    <!-- Menu lateral -->
+    <div class="sidebar">
+        <h2>Menu</h2>
+        <ul>
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Serviços</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+    </div>
+
+    <!-- Área principal -->
+    <div class="main">
+        <div class="container">Container 1</div>
+        <div class="container">Container 2</div>
+        <div class="container">Container 3</div>
+        <div class="container">Container 4</div>
+    </div>
+</body>
+</html>
