@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Piano Virtual Horizontal</title>
+
+<style>
+body {
+    margin: 0;
+    background: radial-gradient(#222, #000);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.piano {
+    position: relative;
+    padding: 20px;
+    background: #111;
+    border-radius: 14px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.8);
+}
+
+.info {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.keys {
+    position: relative;
+    display: flex;
+}
+
+/* Teclas brancas */
+.white {
+    position: relative;
+    width: 55px;
+    height: 260px;
+    background: linear-gradient(#fff, #ddd);
+    border: 1px solid #000;
+    border-radius: 0 0 8px 8px;
+    box-sizing: border-box;
+}
+
+.white.active {
+    background: #ccc;
+}
+
+.white span {
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    color: #000;
+}
+
+/* Teclas pretas */
+.black {
+    position: absolute;
+    width: 35px;
+    height: 160px;
+    background: linear-gradient(#222, #000);
+    border-radius: 0 0 6px 6px;
+    z-index: 2;
+}
+
+.black.active {
+    background: #555;
+}
+
+.black span {
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+    font-size: 11px;
+    color: #fff;
+}
+</style>
+</head>
+<body>
+
+<div class="piano">
+    <div class="info">
+        Teclas: A W S E D F T G Y H U J K O L P Ç | Sustain: ESPAÇO
+    </div>
+    <div class="keys" id="keys"></div>
+</div>
+
+<script>
+const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+const container = document.getElementById("keys");
+
+let sustain = false;
+let activeNotes = [];
+
+const baseFreq = 130.81; // C3
+
+const layout = [
+ {n:"C", k:"A"}, {n:"C#", k:"W"},
+ {n:"D", k:"S"}, {n:"D#", k:"E"},
+ {n:"E", k:"D"},
+ {n:"F", k:"F"}, {n:"F#", k:"T"},
+ {n:"G", k:"G"}, {n:"G#", k:"Y"},
+ {n:"A", k:"H"}, {n:"A#", k:"U"},
+ {n:"B", k:"J"}
+];
+
+const extra = [
+ {n:"C", k:"K"}, {n:"C#", k:"O"},
+ {n:"D", k:"L"}, {n:"D#", k:"P"},
+ {n:"E", k:"Ç"}
+];
+
+function play(freq) {
+    const osc1 = audioCtx.createOscillator();
+    const osc2 = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+
+    osc1.type = "triangle";
+    osc2.type = "sine";
+
+    osc1.frequency.value = freq;
+    osc2.frequency.value = freq * 2;
+
+    gain.gain.setValueAtTime(0.001, audioCtx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.45, audioCtx.currentTime + 0.02);
+
+    osc1.connect(gain);
+    osc2.connect(gain);
+    gain.connect(audioCtx.destination);
+
+    osc1.start();
+    osc2.start();
+
+    if (!sustain) {
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 1.5);
+        osc1.stop(audioCtx.currentTime + 1.5);
+        osc2.stop(audioCtx.currentTime + 1.5);
+    } else {
+        activeNotes.push({osc1, osc2, gain});
+    }
+}
+
+function stopSustain() {
+    activeNotes.forEach(n => {
+        n.gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 1);
+        n.osc1.stop(audioCtx.currentTime + 1);
+        n.osc2.stop(audioCtx.currentTime + 1);
+    });
+    activeNotes = [];
+}
+
+function createOctave(map, offset) {
+    let whiteIndex = 0;
+
+    map.forEach((note, i) => {
+        const freq = baseFreq * Math.pow(2, (i + offset) / 12);
+
+        if (!note.n.includes("#")) {
+            const w = document.createElement("div");
+            w.className = "white";
+            w.dataset.key = note.k;
+            w.innerHTML = `<span>${note.n}<br>${note.k}</span>`;
+            w.onmousedown = w.ontouchstart = () => {
+                play(freq);
+                w.classList.add("active");
+                setTimeout(() => w.classList.remove("active"), 120);
+            };
+            container.appendChild(w);
+            whiteIndex++;
+        } else {
+            const b = document.createElement("div");
+            b.className = "black";
+            b.dataset.key = note.k;
+            b.style.left = `${whiteIndex * 55 - 18}px`;
+            b.innerHTML = `<span>${note.n}<br>${note.k}</span>`;
+            b.onmousedown = b.ontouchstart = () => {
+                play(freq);
+                b.classList.add("active");
+                setTimeout(() => b.classList.remove("active"), 120);
+            };
+            container.appendChild(b);
+        }
+    });
+}
+
+// 2 oitavas + meia
+createOctave(layout, 0);
+createOctave(layout, 12);
+createOctave(extra, 24);
+
+// Teclado do PC
+document.addEventListener("keydown", e => {
+    if (e.code === "Space") {
+        sustain = true;
+        return;
+    }
+
+    const key = e.key.toUpperCase();
+    document.querySelectorAll(`[data-key="${key}"]`).forEach(el => {
+        el.classList.add("active");
+        const all = [...layout, ...layout, ...extra];
+        const index = all.findIndex(n => n.k === key);
+        if (index >= 0) play(baseFreq * Math.pow(2, index / 12));
+        setTimeout(() => el.classList.remove("active"), 120);
+    });
+});
+
+document.addEventListener("keyup", e => {
+    if (e.code === "Space") {
+        sustain = false;
+        stopSustain();
+    }
+});
+</script>
+
+</body>
+</html>
